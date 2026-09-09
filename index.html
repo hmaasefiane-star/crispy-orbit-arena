@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>CRISPY ORBIT</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <canvas id="game-canvas"></canvas>
+  <div id="hurt-flash"></div>
+  <div id="rotate-lock"><div><div class="big">TURN YOUR PHONE</div><div>landscape only</div></div></div>
+
+  <div id="hud">
+    <div class="topbar">
+      <div class="pill" id="hud-bananas">🍌 0/0</div>
+      <div class="pill" id="hud-hearts">❤️❤️❤️</div>
+      <div class="pill" id="hud-time">0:00.0</div>
+      <button class="pause-btn" id="btn-pause">II</button>
+    </div>
+    <div id="xp-wrap">
+      <div id="xp-label">XP 0 → 1</div>
+      <div id="xp-bar"><div id="xp-fill"></div></div>
+    </div>
+    <div id="cd-wrap">HOP <span id="hud-cd">1.0s</span></div>
+    <div id="arrow-wrap"><div id="arrow">▲</div><div id="arrow-dist">0m</div></div>
+    <div id="toast"></div>
+    <div id="controls">
+      <div id="joystick-zone"><div id="joy-base"><div id="joy-knob"></div></div></div>
+      <div id="action-btns">
+        <button class="act hidden" id="btn-fire">FIRE</button>
+        <button class="act" id="btn-ability">HOP</button>
+        <button class="act" id="btn-jump">BRAKE</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen active" id="screen-menu">
+    <div class="logo">CRISPY ORBIT</div>
+    <div class="tag">kart · bananas · ramps · don't hit lava</div>
+    <button class="btn" id="btn-play">PLAY</button>
+  </div>
+  <div class="screen" id="screen-upgrade">
+    <div class="card wide">
+      <h2>LEVEL UP</h2>
+      <p id="upgrade-sub">pick one</p>
+      <div id="upgrade-list"></div>
+    </div>
+  </div>
+  <div class="screen" id="screen-pause">
+    <div class="card">
+      <h2>PAUSED</h2>
+      <button class="btn" id="btn-resume">RESUME</button>
+      <button class="btn" id="btn-restart">RESTART</button>
+      <button class="btn" id="btn-quit">MENU</button>
+    </div>
+  </div>
+  <div class="screen" id="screen-complete">
+    <div class="card">
+      <h2>ALL BANANAS</h2>
+      <div class="stats" id="complete-stats"></div>
+      <button class="btn" id="btn-next">PLAY AGAIN</button>
+      <button class="btn" id="btn-complete-menu">MENU</button>
+    </div>
+  </div>
+  <div class="screen" id="screen-fail">
+    <div class="card">
+      <h2>WIPED OUT</h2>
+      <div class="stats" id="fail-stats"></div>
+      <button class="btn" id="btn-retry">RETRY</button>
+      <button class="btn" id="btn-fail-menu">MENU</button>
+    </div>
+  </div>
+  <script src="lib/three.min.js"></script>
+  <script src="src/game.js"></script>
+</body>
+</html>
